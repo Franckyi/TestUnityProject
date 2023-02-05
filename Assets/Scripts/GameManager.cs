@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public BoardHandler BoardHandler;
     public RecipeRegistry RecipeRegistry;
 
-    private void Awake()
+    private void Start()
     {
         if (Instance == null)
             Instance = this;

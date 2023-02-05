@@ -23,20 +23,20 @@ public class BoardHandler : MonoBehaviour
         var mousePos = (Vector2) _camera.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetKeyDown("a"))
         {
-            SpawnParticle(ParticleType.ParticleA, mousePos);
+            SpawnParticleAt(ParticleType.ParticleA, mousePos);
         }
         else if (Input.GetKeyDown("b"))
         {
-            SpawnParticle(ParticleType.ParticleB, mousePos);
+            SpawnParticleAt(ParticleType.ParticleB, mousePos);
         }
         else if (Input.GetKeyDown("c"))
         {
-            SpawnParticle(ParticleType.ParticleC, mousePos);
+            SpawnParticleAt(ParticleType.ParticleC, mousePos);
         }
     }
 
-    public void SpawnParticle(ParticleType particle, Vector2 pos)
+    public GameObject SpawnParticleAt(ParticleType particleType, Vector2 pos)
     {
-        Instantiate(_particlePrefabs[particle], pos, Quaternion.identity);
+        return Instantiate(_particlePrefabs[particleType], pos, Quaternion.identity);
     }
 }
